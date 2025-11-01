@@ -732,51 +732,6 @@
   },
   {
     "count": 1,
-    "name": "Talent Row Level 15",
-    "category": [
-      "Talents",
-      "Vanilla"
-    ],
-    "useful": true
-  },
-  {
-    "count": 1,
-    "name": "Talent Row Level 30",
-    "category": [
-      "Talents",
-      "Vanilla"
-    ],
-    "useful": true
-  },
-  {
-    "count": 1,
-    "name": "Talent Row Level 45",
-    "category": [
-      "Talents",
-      "Vanilla"
-    ],
-    "useful": true
-  },
-  {
-    "count": 1,
-    "name": "Talent Row Level 60",
-    "category": [
-      "Talents",
-      "The Burning Crusade"
-    ],
-    "useful": true
-  },
-  {
-    "count": 1,
-    "name": "Talent Row Level 75",
-    "category": [
-      "Talents",
-      "Wrath of the Lich King"
-    ],
-    "useful": true
-  },
-  {
-    "count": 1,
     "name": "Paladin",
     "category": [
       "Class"
@@ -1462,29 +1417,5 @@
       "Mists of Pandaria"
     ],
     "filler": true
-  },
-  {
-    "count": "3",
-    "name": "Ankh of Reincarnation",
-    "category": [
-      "Hardcore"
-    ],
-    "useful": true
-  },
-  {
-    "count": "3",
-    "name": "Progressive Equipment",
-    "category": [
-      "Equipment"
-    ],
-    "useful": true
-  },
-  {
-    "count": "10",
-    "name": "Progressive XP Rate",
-    "category": [
-      "XP Rate"
-    ],
-    "progression": true
   }
 ]

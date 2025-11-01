@@ -37,28 +37,19 @@ class LevelItems(Choice):
     display_name = """Progressive or Sequential"""
     option_sequential = 0
     option_progressive = 1
-    default = 0
-
-class XPRateItems(Range):
-    """Choose how many "Progressive XP Rate" items you want added in the pool. 
-    The value of the "XP Rate" is defined by you while you are playing, whether it be equipping an Heirloom gear piece, getting a temporary XP Buff like a potion, Darkmoon Faire buff, etc."""
-    display_name = """Number of Progressive XP Rate"""
-    range_start = 0
-    range_end = 10
-    default = 0
+    default = 1
 
 class EasierExpansionTransition(Choice):
     """Setting it to true will make it that the logic will always expect the first zone of each expansion be received before allowing progression"""
     display_name = """Easier Expansion Transition"""
     option_false = 0
     option_true = 1
-    default = 0
+    default = 1
 
 # This is called before any manual options are defined, in case you want to define your own with a clean slate or let Manual define over them
 def before_options_defined(options: dict[str, Type[Option[Any]]]) -> dict[str, Type[Option[Any]]]:
     options["faction"] = Faction
     options["level_items"] = LevelItems
-    options["xp_rate_items"] = XPRateItems
     options["easier_expansion_transition"] = EasierExpansionTransition
     return options
 
@@ -80,10 +71,9 @@ def after_options_defined(options: Type[PerGameCommonOptions]):
     mists_of_pandaria = Level 90"""    
     options.type_hints["goal"].default = 4
     options.type_hints["randomize_starting_class"].__doc__ = """If set to 'true', you will be given a random class for you to play. You can see the received class in the Manual client."""
+    options.type_hints["randomize_starting_class"].default = False
     options.type_hints["include_dungeons"].__doc__ = """If set to 'true', this will add all the various leveling dungeons as Filler items. This has no effect on logic; only Maximum Level and Zone Items do."""
-    options.type_hints["include_talent_slots"].__doc__ = """If set to 'true', this will add "Talent Row Level X" items to the pool. This adds a bit of difficulty as you won't use Talents until you find the correct item for each row."""
-    options.type_hints["include_equipment_rarity"].__doc__ = """If set to 'true', this will add "Progressive Equipement" items to the pool. You start as only being able to wear Gray & White items and finding a "Progressive Equipement" will then unlock Greens, then Blues and then Purples."""
-    options.type_hints["hardcore_mode"].__doc__ = """If set to 'true', this will add 3 "Ankh of Reincarnation" items into the pool. On Hardcore, if you die, you have to restart your character, unless you have an unused "Ankh of Reincarnation"."""
+    options.type_hints["include_dungeons"].default = False
     return options
 
 # Use this Hook if you want to add your Option to an Option group (existing or not)

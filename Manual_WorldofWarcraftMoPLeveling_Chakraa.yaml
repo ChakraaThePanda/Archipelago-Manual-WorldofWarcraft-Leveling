@@ -70,25 +70,13 @@ Manual_WorldofWarcraftMoPLeveling_Chakraa:
 
   level_items:
     # Progressive will add multiple Progressive Levels to the pool and replace the normal "Maximum Level X" items.
-    sequential: 50
-    progressive: 0
-
-  xp_rate_items:
-    # Choose how many "Progressive XP Rate" items you want added in the pool. 
-    # The value of the "XP Rate" is defined by you while you are playing, whether it be equipping an Heirloom gear piece, getting a temporary XP Buff like a potion, Darkmoon Faire buff, etc.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    sequential: 0
+    progressive: 50
 
   easier_expansion_transition:
     # Setting it to true will make it that the logic will always expect the first zone of each expansion be received before allowing progression
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   goal:
     # This will affect the items/locations in the randomizer to match what max level you want to reach.
@@ -105,28 +93,13 @@ Manual_WorldofWarcraftMoPLeveling_Chakraa:
 
   randomize_starting_class:
     # If set to 'true', you will be given a random class for you to play. You can see the received class in the Manual client.
-    'false': 0
-    'true': 50
-
-  include_talent_slots:
-    # If set to 'true', this will add "Talent Row Level X" items to the pool. This adds a bit of difficulty as you won't use Talents until you find the correct item for each row.
-    'false': 0
-    'true': 50
+    'false': 50
+    'true': 0
 
   include_dungeons:
     # If set to 'true', this will add all the various leveling dungeons as Filler items. This has no effect on logic; only Maximum Level and Zone Items do.
-    'false': 0
-    'true': 50
-
-  include_equipment_rarity:
-    # If set to 'true', this will add "Progressive Equipement" items to the pool. You start as only being able to wear Gray & White items and finding a "Progressive Equipement" will then unlock Greens, then Blues and then Purples.
-    'false': 0
-    'true': 50
-
-  hardcore_mode:
-    # If set to 'true', this will add 3 "Ankh of Reincarnation" items into the pool. On Hardcore, if you die, you have to restart your character, unless you have an unused "Ankh of Reincarnation".
-    'false': 0
-    'true': 50
+    'false': 50
+    'true': 0
 
   ###########################
   # Item & Location Options #
