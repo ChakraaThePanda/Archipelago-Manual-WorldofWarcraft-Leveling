@@ -79,7 +79,7 @@ Manual_WorldofWarcraftLeveling_Chakraa:
     'false': 50
     'true': 0
 
-  preorpostcataclysm:
+  pre_or_post_cataclysm:
     # Select whether you want to quest in the pre-cataclysm or post-cataclysm versions of zones affected by the Cataclysm expansion in the pool.
     # Setting this option to Pre-Cataclysm will make it so that zones like Stranglethorn Vale, Desolace, Feralas, and Thousand Needles are in their original states.
     # If you choose your Goal to be Vanilla, The Burning Crusade, or Wrath of the Lich King, you can still choose Post-Cataclysm as your option, if you are playing Cataclysm or Mists of Pandaria game versions.

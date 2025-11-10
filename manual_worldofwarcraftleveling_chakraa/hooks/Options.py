@@ -62,7 +62,7 @@ def before_options_defined(options: dict[str, Type[Option[Any]]]) -> dict[str, T
     options["faction"] = Faction
     options["level_items"] = LevelItems
     options["easier_transitions"] = EasierTransitions
-    options["preorpostcataclysm"] = PreOrPostCataclysm
+    options["pre_or_post_cataclysm"] = PreOrPostCataclysm
     return options
 
 # This is called after any manual options are defined, in case you want to see what options are defined or want to modify the defined options

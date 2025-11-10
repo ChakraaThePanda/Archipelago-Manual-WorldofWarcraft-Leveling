@@ -104,7 +104,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     level_items = get_option_value(multiworld, player, "level_items")
     faction_items = get_option_value(multiworld, player, "faction")
     expansion = get_option_value(multiworld, player, "goal")
-    preorpostcataclysm = get_option_value(multiworld, player, "preorpostcataclysm")
+    preorpostcataclysm = get_option_value(multiworld, player, "pre_or_post_cataclysm")
 
     # Map numeric values to expansion names and max levels
     expansion_map = {
