@@ -46,11 +46,22 @@ class EasierExpansionTransition(Choice):
     option_true = 1
     default = 1
 
+class PreOrPostCataclysm(Choice):
+    """Select whether you want to quest in the pre-cataclysm or post-cataclysm versions of zones affected by the Cataclysm expansion in the pool.
+    Setting this option to Pre-Cataclysm will make it so that zones like Stranglethorn Vale, Desolace, Feralas, and Thousand Needles are in their original states.
+    If you choose your Goal to be Vanilla, The Burning Crusade, or Wrath of the Lich King, you can still choose Post-Cataclysm as your option, if you are playing Cataclysm or Mists of Pandaria game versions.
+    ## WARNING ## If you choose your Goal to be either Cataclysm or Mists of Pandaria, you will automatically be set to Post-Cataclysm, as those expansions assume the world has already been changed by Cataclysm."""
+    display_name = """Easier Expansion Transition"""
+    option_precataclysm = 0
+    option_postcataclysm = 1
+    default = 1
+
 # This is called before any manual options are defined, in case you want to define your own with a clean slate or let Manual define over them
 def before_options_defined(options: dict[str, Type[Option[Any]]]) -> dict[str, Type[Option[Any]]]:
     options["faction"] = Faction
     options["level_items"] = LevelItems
     options["easier_expansion_transition"] = EasierExpansionTransition
+    options["preorpostcataclysm"] = PreOrPostCataclysm
     return options
 
 # This is called after any manual options are defined, in case you want to see what options are defined or want to modify the defined options

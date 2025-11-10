@@ -116,7 +116,20 @@
       "Zones",
       "Zones 10-20",
       "Alliance",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Westfall (10-20)",
+    "category": [
+      "Zones",
+      "Zones 10-20",
+      "Alliance",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -155,12 +168,25 @@
   },
   {
     "count": 1,
+    "name": "Azshara (42-55)",
+    "category": [
+      "Zones",
+      "Zones 40-50",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
     "name": "Azshara (10-20)",
     "category": [
       "Zones",
       "Zones 10-20",
       "Horde",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
     ],
     "progression": true
   },
@@ -171,7 +197,21 @@
       "Zones",
       "Zones 10-20",
       "Horde",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "The Barrens (10-33)",
+    "category": [
+      "Zones",
+      "Zones 10-20",
+      "Zones 20-30",
+      "Horde",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -193,7 +233,21 @@
       "Zones",
       "Zones 10-20",
       "Alliance",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Redridge Mountains (15-25)",
+    "category": [
+      "Zones",
+      "Zones 10-20",
+      "Zones 20-30",
+      "Alliance",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -203,7 +257,19 @@
     "category": [
       "Zones",
       "Zones 20-30",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Ashenvale (20-30)",
+    "category": [
+      "Zones",
+      "Zones 20-30",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -214,7 +280,20 @@
       "Zones",
       "Zones 20-30",
       "Horde",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Hillsbrad Foothills (20-31)",
+    "category": [
+      "Zones",
+      "Zones 20-30",
+      "Horde",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -225,7 +304,21 @@
       "Zones",
       "Zones 20-30",
       "Alliance",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Duskwood (10-30)",
+    "category": [
+      "Zones",
+      "zones 10-20",
+      "Zones 20-30",
+      "Alliance",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -236,7 +329,20 @@
       "Zones",
       "Zones 20-30",
       "Alliance",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Wetlands (20-30)",
+    "category": [
+      "Zones",
+      "Zones 20-30",
+      "Alliance",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -246,7 +352,19 @@
     "category": [
       "Zones",
       "Zones 20-30",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Arathi Highlands (30-40)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -256,7 +374,20 @@
     "category": [
       "Zones",
       "Zones 20-30",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Stranglethorn Vale (30-50)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Zones 40-50",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -266,7 +397,20 @@
     "category": [
       "Zones",
       "Zones 20-30",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Stonetalon Mountain (15-25)",
+    "category": [
+      "Zones",
+      "Zones 10-20",
+      "Zones 20-30",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -276,7 +420,19 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Desolace (30-39)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -286,7 +442,8 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
     ],
     "progression": true
   },
@@ -296,7 +453,8 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
     ],
     "progression": true
   },
@@ -306,7 +464,19 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "The Hinterlands (41-49)",
+    "category": [
+      "Zones",
+      "Zones 40-50",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -316,7 +486,21 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Dustwallow Marsh (35-61)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Zones 40-50",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -326,7 +510,33 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Feralas (41-60)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Zones 40-50",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Western Plaguelands (46-57)",
+    "category": [
+      "Zones",
+      "Zones 40-50",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -336,7 +546,8 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
     ],
     "progression": true
   },
@@ -346,7 +557,19 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Eastern Plaguelands (54-59)",
+    "category": [
+      "Zones",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -356,7 +579,20 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Thousand Needles (24-35)",
+    "category": [
+      "Zones",
+      "Zones 20-30",
+      "Zones 30-40",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -366,7 +602,20 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Badlands (36-45)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Zones 40-50",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -376,7 +625,20 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Felwood (47-54)",
+    "category": [
+      "Zones",
+      "Zones 40-50",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -386,7 +648,19 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Tanaris (40-50)",
+    "category": [
+      "Zones",
+      "Zones 40-50",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -396,7 +670,20 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Searing Gorge (43-56)",
+    "category": [
+      "Zones",
+      "Zones 40-50",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -406,7 +693,19 @@
     "category": [
       "Zones",
       "Zones 50-60",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Burning Steppes (50-59)",
+    "category": [
+      "Zones",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -426,7 +725,19 @@
     "category": [
       "Zones",
       "Zones 50-60",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Winterspring (55-60)",
+    "category": [
+      "Zones",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -436,7 +747,19 @@
     "category": [
       "Zones",
       "Zones 50-60",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Swamp of Sorrows (36-43)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },
@@ -446,7 +769,20 @@
     "category": [
       "Zones",
       "Zones 50-60",
-      "Vanilla"
+      "Vanilla",
+      "Post-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Blasted Lands (46-63)",
+    "category": [
+      "Zones",
+      "Zones 40-50",
+      "Zones 50-60",
+      "Vanilla",
+      "Pre-Cataclysm"
     ],
     "progression": true
   },

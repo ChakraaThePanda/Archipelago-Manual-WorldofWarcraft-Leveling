@@ -5,7 +5,7 @@ from BaseClasses import MultiWorld, CollectionState, Item
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
 from ..Locations import ManualLocation
-from .Options import LevelItems, Faction
+from .Options import LevelItems, Faction, PreOrPostCataclysm
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -104,6 +104,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     level_items = get_option_value(multiworld, player, "level_items")
     faction_items = get_option_value(multiworld, player, "faction")
     expansion = get_option_value(multiworld, player, "goal")
+    preorpostcataclysm = get_option_value(multiworld, player, "preorpostcataclysm")
 
     # Map numeric values to expansion names and max levels
     expansion_map = {
@@ -119,6 +120,14 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     allowed_expansions = [name for name, _ in list(expansion_map.values())[:expansion + 1]]
     skipped_expansions = len(expansion_map) - len(allowed_expansions)
+
+    # 0 => "Pre-Cataclysm", 1 => "Post-Cataclysm"
+    cata_state_tag = None
+    if preorpostcataclysm in (0, 1):
+        cata_state_tag = "Pre-Cataclysm" if preorpostcataclysm == 0 else "Post-Cataclysm"
+    # Enforce Post-Cataclysm when targeting Cataclysm or MoP goals
+    if expansion >= 3:  # 3=Cataclysm, 4=MoP
+        cata_state_tag = "Post-Cataclysm"
 
     # Initialize counters and lists
     progressive_levels_removed = 0
@@ -162,6 +171,13 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         if any(category in item_categories for category in ["Sequential Levels", "Zones", "Dungeons"]):
             if not any(expansion in item_categories for expansion in allowed_expansions):
                 continue
+
+        # Handle Cataclysm state-specific items
+        if "Zones" in item_categories:
+            if "Pre-Cataclysm" in item_categories or "Post-Cataclysm" in item_categories:
+                # If we decided on a required tag, item must match it
+                if cata_state_tag and cata_state_tag not in item_categories:
+                    continue
 
         # Keep the item if no removal condition is met
         items_to_keep.append(item)

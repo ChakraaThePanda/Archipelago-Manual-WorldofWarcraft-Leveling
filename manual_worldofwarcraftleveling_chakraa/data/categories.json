@@ -40,5 +40,11 @@
   },
   "Mists of Pandaria": {
     "hidden": true
+  },
+  "Pre-Cataclysm": {
+    "hidden": true
+  },
+  "Post-Cataclysm": {
+    "hidden": true
   }
 }

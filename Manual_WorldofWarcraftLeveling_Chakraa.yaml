@@ -28,13 +28,13 @@
 name: Player{number}
 
 # Used to describe your yaml. Useful if you have multiple files.
-description: Default Manual_WorldofWarcraftMoPLeveling_Chakraa Template
+description: Default Manual_WorldofWarcraftLeveling_Chakraa Template
 
-game: Manual_WorldofWarcraftMoPLeveling_Chakraa
+game: Manual_WorldofWarcraftLeveling_Chakraa
 requires:
   version: 0.6.3 # Version of Archipelago required for this yaml to work as expected.
 
-Manual_WorldofWarcraftMoPLeveling_Chakraa:
+Manual_WorldofWarcraftLeveling_Chakraa:
   ################
   # Game Options #
   ################
@@ -77,6 +77,14 @@ Manual_WorldofWarcraftMoPLeveling_Chakraa:
     # Setting it to true will make it that the logic will always expect the first zone of each expansion be received before allowing progression
     'false': 0
     'true': 50
+
+  preorpostcataclysm:
+    # Select whether you want to quest in the pre-cataclysm or post-cataclysm versions of zones affected by the Cataclysm expansion in the pool.
+    # Setting this option to Pre-Cataclysm will make it so that zones like Stranglethorn Vale, Desolace, Feralas, and Thousand Needles are in their original states.
+    # If you choose your Goal to be Vanilla, The Burning Crusade, or Wrath of the Lich King, you can still choose Post-Cataclysm as your option, if you are playing Cataclysm or Mists of Pandaria game versions.
+    # ## WARNING ## If you choose your Goal to be either Cataclysm or Mists of Pandaria, you will automatically be set to Post-Cataclysm, as those expansions assume the world has already been changed by Cataclysm.
+    precataclysm: 0
+    postcataclysm: 50
 
   goal:
     # This will affect the items/locations in the randomizer to match what max level you want to reach.

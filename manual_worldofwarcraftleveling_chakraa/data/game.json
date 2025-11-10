@@ -1,6 +1,6 @@
 {
   "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.game.schema.json",
-  "game": "WorldofWarcraftMoPLeveling",
+  "game": "WorldofWarcraftLeveling",
   "creator": "Chakraa",
   "filler_item_name": "Did someone say [Thunderfury, Blessed Blade of the Windseeker]?!",
   "starting_items": [
