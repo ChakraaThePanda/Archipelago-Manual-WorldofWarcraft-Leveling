@@ -172,7 +172,7 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Zones 50-60",
+      "Horde",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -244,7 +244,6 @@
     "category": [
       "Zones",
       "Zones 10-20",
-      "Zones 20-30",
       "Alliance",
       "Vanilla",
       "Pre-Cataclysm"
@@ -291,7 +290,6 @@
     "category": [
       "Zones",
       "Zones 20-30",
-      "Horde",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -314,7 +312,7 @@
     "name": "Duskwood (10-30)",
     "category": [
       "Zones",
-      "zones 10-20",
+      "Zones 10-20",
       "Zones 20-30",
       "Alliance",
       "Vanilla",
@@ -385,7 +383,6 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Zones 40-50",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -408,7 +405,6 @@
     "category": [
       "Zones",
       "Zones 10-20",
-      "Zones 20-30",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -497,8 +493,6 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Zones 40-50",
-      "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -520,9 +514,7 @@
     "name": "Feralas (41-60)",
     "category": [
       "Zones",
-      "Zones 30-40",
       "Zones 40-50",
-      "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -534,7 +526,6 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -590,7 +581,7 @@
     "category": [
       "Zones",
       "Zones 20-30",
-      "Zones 30-40",
+      "Horde",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -613,7 +604,6 @@
     "category": [
       "Zones",
       "Zones 30-40",
-      "Zones 40-50",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -636,7 +626,6 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -681,7 +670,6 @@
     "category": [
       "Zones",
       "Zones 40-50",
-      "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -779,7 +767,6 @@
     "name": "Blasted Lands (46-63)",
     "category": [
       "Zones",
-      "Zones 40-50",
       "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"

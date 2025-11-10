@@ -39,12 +39,13 @@ class LevelItems(Choice):
     option_progressive = 1
     default = 1
 
-class EasierExpansionTransition(Choice):
-    """Setting it to true will make it that the logic will always expect the first zone of each expansion be received before allowing progression"""
-    display_name = """Easier Expansion Transition"""
+class EasierTransitions(Choice):
+    """Setting it to true will make it that the logic will always expect 2 zones for each level bracket (eg: 10-20) and the first zone of each expansion to be received before allowing progression.
+    This will make it easier to quest in logic by allowing you more zone choices for your level."""
+    display_name = """Easier Transitions"""
     option_false = 0
     option_true = 1
-    default = 1
+    default = 0
 
 class PreOrPostCataclysm(Choice):
     """Select whether you want to quest in the pre-cataclysm or post-cataclysm versions of zones affected by the Cataclysm expansion in the pool.
@@ -60,7 +61,7 @@ class PreOrPostCataclysm(Choice):
 def before_options_defined(options: dict[str, Type[Option[Any]]]) -> dict[str, Type[Option[Any]]]:
     options["faction"] = Faction
     options["level_items"] = LevelItems
-    options["easier_expansion_transition"] = EasierExpansionTransition
+    options["easier_transitions"] = EasierTransitions
     options["preorpostcataclysm"] = PreOrPostCataclysm
     return options
 

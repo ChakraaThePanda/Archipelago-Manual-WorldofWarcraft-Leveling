@@ -73,10 +73,11 @@ Manual_WorldofWarcraftLeveling_Chakraa:
     sequential: 0
     progressive: 50
 
-  easier_expansion_transition:
-    # Setting it to true will make it that the logic will always expect the first zone of each expansion be received before allowing progression
-    'false': 0
-    'true': 50
+  easier_transitions:
+    # Setting it to true will make it that the logic will always expect 2 zones for each level bracket (eg: 10-20) and the first zone of each expansion to be received before allowing progression.
+    # This will make it easier to quest in logic by allowing you more zone choices for your level.
+    'false': 50
+    'true': 0
 
   preorpostcataclysm:
     # Select whether you want to quest in the pre-cataclysm or post-cataclysm versions of zones affected by the Cataclysm expansion in the pool.
