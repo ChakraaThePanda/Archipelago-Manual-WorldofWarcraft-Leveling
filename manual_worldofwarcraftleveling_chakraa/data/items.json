@@ -168,10 +168,10 @@
   },
   {
     "count": 1,
-    "name": "Azshara (42-55)",
+    "name": "Azshara (45-55)",
     "category": [
       "Zones",
-      "Zones 40-50",
+      "Zones 50-60",
       "Horde",
       "Vanilla",
       "Pre-Cataclysm"
@@ -204,7 +204,7 @@
   },
   {
     "count": 1,
-    "name": "The Barrens (10-33)",
+    "name": "The Barrens (10-25)",
     "category": [
       "Zones",
       "Zones 10-20",
@@ -286,10 +286,22 @@
   },
   {
     "count": 1,
-    "name": "Hillsbrad Foothills (20-31)",
+    "name": "Hillsbrad Foothills (20-30)",
     "category": [
       "Zones",
       "Zones 20-30",
+      "Vanilla",
+      "Pre-Cataclysm"
+    ],
+    "progression": true
+  },
+  {
+    "count": 1,
+    "name": "Alterac Mountains (30-40)",
+    "category": [
+      "Zones",
+      "Zones 30-40",
+      "Alliance",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -309,10 +321,9 @@
   },
   {
     "count": 1,
-    "name": "Duskwood (10-30)",
+    "name": "Duskwood (18-30)",
     "category": [
       "Zones",
-      "Zones 10-20",
       "Zones 20-30",
       "Alliance",
       "Vanilla",
@@ -379,7 +390,7 @@
   },
   {
     "count": 1,
-    "name": "Stranglethorn Vale (30-50)",
+    "name": "Stranglethorn Vale (30-45)",
     "category": [
       "Zones",
       "Zones 30-40",
@@ -404,7 +415,7 @@
     "name": "Stonetalon Mountain (15-25)",
     "category": [
       "Zones",
-      "Zones 10-20",
+      "Zones 20-30",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -423,7 +434,7 @@
   },
   {
     "count": 1,
-    "name": "Desolace (30-39)",
+    "name": "Desolace (30-40)",
     "category": [
       "Zones",
       "Zones 30-40",
@@ -467,7 +478,7 @@
   },
   {
     "count": 1,
-    "name": "The Hinterlands (41-49)",
+    "name": "The Hinterlands (40-50)",
     "category": [
       "Zones",
       "Zones 40-50",
@@ -489,10 +500,10 @@
   },
   {
     "count": 1,
-    "name": "Dustwallow Marsh (35-61)",
+    "name": "Dustwallow Marsh (35-45)",
     "category": [
       "Zones",
-      "Zones 30-40",
+      "Zones 40-50",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -511,7 +522,7 @@
   },
   {
     "count": 1,
-    "name": "Feralas (41-60)",
+    "name": "Feralas (40-50)",
     "category": [
       "Zones",
       "Zones 40-50",
@@ -522,10 +533,10 @@
   },
   {
     "count": 1,
-    "name": "Western Plaguelands (46-57)",
+    "name": "Western Plaguelands (51-58)",
     "category": [
       "Zones",
-      "Zones 40-50",
+      "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -555,7 +566,7 @@
   },
   {
     "count": 1,
-    "name": "Eastern Plaguelands (54-59)",
+    "name": "Eastern Plaguelands (53-60)",
     "category": [
       "Zones",
       "Zones 50-60",
@@ -577,10 +588,10 @@
   },
   {
     "count": 1,
-    "name": "Thousand Needles (24-35)",
+    "name": "Thousand Needles (25-35)",
     "category": [
       "Zones",
-      "Zones 20-30",
+      "Zones 30-40",
       "Horde",
       "Vanilla",
       "Pre-Cataclysm"
@@ -603,7 +614,7 @@
     "name": "Badlands (36-45)",
     "category": [
       "Zones",
-      "Zones 30-40",
+      "Zones 40-50",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -622,10 +633,10 @@
   },
   {
     "count": 1,
-    "name": "Felwood (47-54)",
+    "name": "Felwood (48-55)",
     "category": [
       "Zones",
-      "Zones 40-50",
+      "Zones 50-60",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -666,7 +677,7 @@
   },
   {
     "count": 1,
-    "name": "Searing Gorge (43-56)",
+    "name": "Searing Gorge (43-50)",
     "category": [
       "Zones",
       "Zones 40-50",
@@ -688,7 +699,7 @@
   },
   {
     "count": 1,
-    "name": "Burning Steppes (50-59)",
+    "name": "Burning Steppes (50-58)",
     "category": [
       "Zones",
       "Zones 50-60",
@@ -742,10 +753,10 @@
   },
   {
     "count": 1,
-    "name": "Swamp of Sorrows (36-43)",
+    "name": "Swamp of Sorrows (35-45)",
     "category": [
       "Zones",
-      "Zones 30-40",
+      "Zones 40-50",
       "Vanilla",
       "Pre-Cataclysm"
     ],
@@ -764,7 +775,7 @@
   },
   {
     "count": 1,
-    "name": "Blasted Lands (46-63)",
+    "name": "Blasted Lands (45-55)",
     "category": [
       "Zones",
       "Zones 50-60",
