@@ -5,7 +5,7 @@ from BaseClasses import MultiWorld, CollectionState, Item
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
 from ..Locations import ManualLocation
-from .Options import LevelItems, Faction, PreOrPostCataclysm
+from .Options import LevelItems, Faction, PreOrPostCataclysm, GoldHuntAmount, Expansion
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -43,7 +43,7 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
-    expansion = get_option_value(multiworld, player, "goal")
+    expansion = get_option_value(multiworld, player, "expansion")
 
     # Map numeric values to expansion names and max levels
     expansion_map = {
@@ -103,8 +103,10 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # Get player options
     level_items = get_option_value(multiworld, player, "level_items")
     faction_items = get_option_value(multiworld, player, "faction")
-    expansion = get_option_value(multiworld, player, "goal")
+    expansion = get_option_value(multiworld, player, "expansion")
     preorpostcataclysm = get_option_value(multiworld, player, "pre_or_post_cataclysm")
+    goal = get_option_value(multiworld, player, "goal")
+    gold_amount = get_option_value(multiworld, player, "gold_hunt_amount")
 
     # Map numeric values to expansion names and max levels
     expansion_map = {
@@ -133,6 +135,12 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     progressive_levels_removed = 0
     items_to_keep = []
     faction_item_precollected = False
+    gold_removed = 0
+    gold_to_remove = 0
+
+    if goal == 1:  # Gold Hunt goal
+        total_gold = sum(1 for i in item_pool if i.name == "Gold")
+        gold_to_remove = max(total_gold - gold_amount, 0)
 
     for item in item_pool:
         item_table_element = next((i for i in item_table if i["name"] == item.name), None)
@@ -140,6 +148,14 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
             continue
 
         item_categories = item_table_element.get("category", [])
+
+        if item.name == "Gold":
+                if goal == 1:  # Gold Hunt goal
+                    if gold_removed < gold_to_remove:
+                        gold_removed += 1
+                        continue
+                else:
+                    continue
 
         # Handle "Class" and "Faction" items
         if "Class" in item_categories:
@@ -175,7 +191,6 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         # Handle Cataclysm state-specific items
         if "Zones" in item_categories:
             if "Pre-Cataclysm" in item_categories or "Post-Cataclysm" in item_categories:
-                # If we decided on a required tag, item must match it
                 if cata_state_tag and cata_state_tag not in item_categories:
                     continue
 

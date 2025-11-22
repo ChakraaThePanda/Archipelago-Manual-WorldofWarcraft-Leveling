@@ -1,5 +1,13 @@
 [
   {
+    "count": 10,
+    "name": "Gold",
+    "category": [
+      "Gold"
+    ],
+    "progression": true
+  },
+  {
     "count": 1,
     "name": "Maximum Level 20",
     "category": [

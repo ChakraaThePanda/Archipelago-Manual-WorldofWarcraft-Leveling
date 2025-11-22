@@ -57,5 +57,15 @@
   "Levels 86-90": {
     "connects_to": [],
     "requires": "({YamlDisabled(easier_transitions)} AND (|Maximum Level 90| OR |Progressive Levels:9|) AND |@Zones 85-90:1|) OR ({YamlEnabled(easier_transitions)} AND (|Maximum Level 90| OR |Progressive Levels:9|) AND |@Zones 85-90:2| AND |The Jade Forest (85-86)|)"
+  },
+  "Gold Hunt": {
+    "connects_to": [],
+    "requires": "|@Gold:ALL|",
+    "starting": true
+  },
+  "Leveling": {
+    "connects_to": [],
+    "requires": "({YamlCompare(expansion == 0)} AND (({YamlDisabled(easier_transitions)} AND (|Maximum Level 60| OR |Progressive Levels:5|) AND |@Zones 50-60:1|) OR ({YamlEnabled(easier_transitions)} AND (|Maximum Level 60| OR |Progressive Levels:5|) AND |@Zones 50-60:2|))) OR ({YamlCompare(expansion == 1)} AND (({YamlDisabled(easier_transitions)} AND (|Maximum Level 70| OR |Progressive Levels:6|) AND |@Zones 60-70:1|) OR ({YamlEnabled(easier_transitions)} AND (|Maximum Level 70| OR |Progressive Levels:6|) AND |@Zones 60-70:2| AND |Hellfire Peninsula (58-63)|))) OR ({YamlCompare(expansion == 2)} AND (({YamlDisabled(easier_transitions)} AND (|Maximum Level 80| OR |Progressive Levels:7|) AND |@Zones 70-80:1|) OR ({YamlEnabled(easier_transitions)} AND (|Maximum Level 80| OR |Progressive Levels:7|) AND |@Zones 70-80:2| AND (|Borean Tundra (68-72)| OR |Howling Fjord (68-72)|)))) OR ({YamlCompare(expansion == 3)} AND (({YamlDisabled(easier_transitions)} AND (|Maximum Level 85| OR |Progressive Levels:8|) AND |@Zones 80-85:1|) OR ({YamlEnabled(easier_transitions)} AND (|Maximum Level 85| OR |Progressive Levels:8|) AND |@Zones 80-85:2| AND (|Mount Hyjal (80-82)| OR |Vashj'ir (80-82)|)))) OR ({YamlCompare(expansion == 4)} AND (({YamlDisabled(easier_transitions)} AND (|Maximum Level 90| OR |Progressive Levels:9|) AND |@Zones 85-90:1|) OR ({YamlEnabled(easier_transitions)} AND (|Maximum Level 90| OR |Progressive Levels:9|) AND |@Zones 85-90:2| AND |The Jade Forest (85-86)|)))",
+    "starting": true
   }
 }
