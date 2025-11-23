@@ -1,0 +1,179 @@
+﻿# Q. What is this file?
+# A. This file contains options which allow you to configure your multiworld experience while allowing
+#    others to play how they want as well.
+#
+# Q. How do I use it?
+# A. The options in this file are weighted. This means the higher number you assign to a value, the
+#    more chances you have for that option to be chosen. For example, an option like this:
+#
+#    map_shuffle:
+#      on: 5
+#      off: 15
+#
+#    Means you have 5 chances for map shuffle to occur, and 15 chances for map shuffle to be turned
+#    off.
+#
+# Q. I've never seen a file like this before. What characters am I allowed to use?
+# A. This is a .yaml file. You are allowed to use most characters.
+#    To test if your yaml is valid or not, you can use this website:
+#        http://www.yamllint.com/
+#    You can also verify that your Archipelago options are valid at this site:
+#        https://archipelago.gg/check
+
+# Your name in-game, limited to 16 characters.
+#     {player} will be replaced with the player's slot number.
+#     {PLAYER} will be replaced with the player's slot number, if that slot number is greater than 1.
+#     {number} will be replaced with the counter value of the name.
+#     {NUMBER} will be replaced with the counter value of the name, if the counter value is greater than 1.
+name: Player{number}
+
+# Used to describe your yaml. Useful if you have multiple files.
+description: Default Manual_WorldofWarcraftLeveling_Chakraa Template
+
+game: Manual_WorldofWarcraftLeveling_Chakraa
+requires:
+  version: 0.6.4 # Version of Archipelago required for this yaml to work as expected.
+
+Manual_WorldofWarcraftLeveling_Chakraa:
+  ################
+  # Game Options #
+  ################
+  progression_balancing:
+    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
+    # 
+    # A lower setting means more getting stuck. A higher setting means less getting stuck.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 99
+    random: 0
+    random-low: 0
+    random-high: 0
+    disabled: 0 # equivalent to 0
+    normal: 50 # equivalent to 50
+    extreme: 0 # equivalent to 99
+
+  accessibility:
+    # Set rules for reachability of your items/locations.
+    # 
+    # **Full:** ensure everything can be reached and acquired.
+    # 
+    # **Minimal:** ensure what is needed to reach your goal can be acquired.
+    full: 50
+    minimal: 0
+
+  gold_hunt_amount:
+    # If you have selected the Gold Hunt Goal, choose how much Gold you need to find in the pool to win.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 10
+    10: 50
+    random: 0
+    random-low: 0
+    random-high: 0
+
+  expansion:
+    # This will affect the items/locations in the randomizer to match what max level you want to reach.
+    # vanilla = Level 60
+    # the_burning_crusade = Level 70
+    # wrath_of_the_lich_king = Level 80
+    # cataclysm = Level 85
+    # mists_of_pandaria = Level 90
+    vanilla: 0
+    the_burning_crusade: 0
+    wrath_of_the_lich_king: 0
+    cataclysm: 0
+    mists_of_pandaria: 50
+
+  pre_or_post_cataclysm:
+    # Select whether you want to quest in the pre-cataclysm or post-cataclysm versions of zones affected by the Cataclysm expansion in the pool.
+    # Setting this option to Pre-Cataclysm will make it so that zones like Stranglethorn Vale, Desolace, Feralas, and Thousand Needles are in their original states.
+    # If you choose your Goal to be Vanilla, The Burning Crusade, or Wrath of the Lich King, you can still choose Post-Cataclysm as your option, if you are playing Cataclysm or Mists of Pandaria game versions.
+    # ## WARNING ## If you choose your Goal to be either Cataclysm or Mists of Pandaria, you will automatically be set to Post-Cataclysm, as those expansions assume the world has already been changed by Cataclysm.
+    pre_cataclysm: 0
+    post_cataclysm: 50
+
+  faction:
+    # Choose your character faction. (affects which zones are available for you to quest in)
+    alliance: 0
+    horde: 0
+    random: 50
+
+  level_items:
+    # Progressive will add multiple Progressive Levels to the pool and replace the normal "Maximum Level X" items.
+    sequential: 0
+    progressive: 50
+
+  easier_transitions:
+    # Setting it to true will make it that the logic will always expect 2 zones for each level bracket (eg: 10-20) and the first zone of each expansion to be received before allowing progression.
+    # This will make it easier to quest in logic by allowing you more zone choices for your level.
+    'false': 50
+    'true': 0
+
+  goal:
+    # Select your goal for the randomizer.
+    # Leveling: Reach the maximum level for your selected expansion. Define the expansion with the 'expansion' option.
+    # Gold Hunt: Find a set amount of Gold in the item pool to win. Define the amount of Gold needed with the 'gold_hunt_amount' option.
+    leveling: 50
+    gold_hunt: 0
+
+  death_link:
+    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
+    'false': 50
+    'true': 0
+
+  randomize_starting_class:
+    # If set to 'true', you will be given a random class for you to play. You can see the received class in the Manual client.
+    'false': 50
+    'true': 0
+
+  include_dungeons:
+    # If set to 'true', this will add all the various leveling dungeons as Filler items. This has no effect on logic; only Maximum Level and Zone Items do.
+    'false': 50
+    'true': 0
+
+  ###########################
+  # Item & Location Options #
+  ###########################
+  local_items:
+    # Forces these items to be in their native world.
+    []
+
+  non_local_items:
+    # Forces these items to be outside their native world.
+    []
+
+  start_inventory:
+    # Start with the specified amount of these items. Example: "Bomb: 1"
+    {}
+
+  start_inventory_from_pool:
+    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
+    # 
+    # The game decides what the replacement items will be.
+    {}
+
+  start_hints:
+    # Start with these item's locations prefilled into the ``!hint`` command.
+    []
+
+  start_location_hints:
+    # Start with these locations and their item prefilled into the ``!hint`` command.
+    []
+
+  exclude_locations:
+    # Prevent these locations from having an important item.
+    []
+
+  priority_locations:
+    # Prevent these locations from having an unimportant item.
+    []
+
+  item_links:
+    # Share part of your item pool with other players.
+    []
+
+  plando_items:
+    # Generic items plando.
+    []
