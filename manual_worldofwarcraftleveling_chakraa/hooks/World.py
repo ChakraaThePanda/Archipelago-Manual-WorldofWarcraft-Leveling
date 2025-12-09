@@ -5,7 +5,7 @@ from BaseClasses import MultiWorld, CollectionState, Item
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
 from ..Locations import ManualLocation
-from .Options import LevelItems, Faction, PreOrPostCataclysm, GoldHuntAmount, Expansion
+from .Options import LevelItems, Faction, PreOrPostCataclysm, GoldHuntAmount, Expansion, RandomizeClass
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -16,7 +16,7 @@ from ..Data import game_table, item_table, location_table, region_table
 from ..Helpers import is_option_enabled, get_option_value, format_state_prog_items_key, ProgItemsCat
 
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
-import logging, re
+import logging, re, random
 
 ########################################################################################
 ## Order of method calls when the world generates:
@@ -100,15 +100,17 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
 
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
 def before_create_items_filler(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
-    # Get player options
+
+    # Fetch YAML option values
     level_items = get_option_value(multiworld, player, "level_items")
     faction_items = get_option_value(multiworld, player, "faction")
+    random_class = get_option_value(multiworld, player, "randomize_class")
     expansion = get_option_value(multiworld, player, "expansion")
     preorpostcataclysm = get_option_value(multiworld, player, "pre_or_post_cataclysm")
     goal = get_option_value(multiworld, player, "goal")
     gold_amount = get_option_value(multiworld, player, "gold_hunt_amount")
 
-    # Map numeric values to expansion names and max levels
+    # Expansion mapping + allowed expansions for filtering
     expansion_map = {
         0: ("Vanilla", 60),
         1: ("The Burning Crusade", 70),
@@ -116,31 +118,29 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         3: ("Cataclysm", 85),
         4: ("Mists of Pandaria", 90),
     }
-
-    if expansion not in expansion_map:
-        raise ValueError(f"Invalid expansion value '{expansion}'.")
-
-    allowed_expansions = [name for name, _ in list(expansion_map.values())[:expansion + 1]]
+    allowed_expansions = [name for name, _ in list(expansion_map.values())[: expansion + 1]]
     skipped_expansions = len(expansion_map) - len(allowed_expansions)
 
-    # 0 => "Pre-Cataclysm", 1 => "Post-Cataclysm"
+    # Calculate gold removal amount (if Gold Hunt goal)
+    if goal == 1:
+        total_gold = sum(1 for i in item_pool if i.name == "Gold")
+        gold_to_remove = max(total_gold - gold_amount, 0)
+
+    # Determine which version of the world (Pre or Post Cataclysm)
     cata_state_tag = None
     if preorpostcataclysm in (0, 1):
         cata_state_tag = "Pre-Cataclysm" if preorpostcataclysm == 0 else "Post-Cataclysm"
-    # Enforce Post-Cataclysm when targeting Cataclysm or MoP goals
-    if expansion >= 3:  # 3=Cataclysm, 4=MoP
+    if expansion >= 3:  # Cataclysm (3) or MoP (4) forces Post-Cataclysm state
         cata_state_tag = "Post-Cataclysm"
 
     # Initialize counters and lists
-    progressive_levels_removed = 0
     items_to_keep = []
+    progressive_levels_removed = 0
     faction_item_precollected = False
     gold_removed = 0
     gold_to_remove = 0
-
-    if goal == 1:  # Gold Hunt goal
-        total_gold = sum(1 for i in item_pool if i.name == "Gold")
-        gold_to_remove = max(total_gold - gold_amount, 0)
+    chosen_class_item = None
+    class_candidates_seen = 0
 
     for item in item_pool:
         item_table_element = next((i for i in item_table if i["name"] == item.name), None)
@@ -149,22 +149,33 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
         item_categories = item_table_element.get("category", [])
 
+        # Handle Gold removal for Gold Hunt goal
         if item.name == "Gold":
-                if goal == 1:  # Gold Hunt goal
-                    if gold_removed < gold_to_remove:
-                        gold_removed += 1
-                        continue
-                else:
+            if goal == 1:  # Gold Hunt goal
+                if gold_removed < gold_to_remove:
+                    gold_removed += 1
                     continue
+            else:
+                continue
 
-        # Handle "Class" and "Faction" items
+        # Handle all Class items (never added to pool)
         if "Class" in item_categories:
+            if random_class:
+                if "Pre-Cataclysm" in item_categories or "Post-Cataclysm" in item_categories:
+                    if cata_state_tag and cata_state_tag not in item_categories:
+                        continue
+                class_candidates_seen += 1
+                if random.randrange(class_candidates_seen) == 0:
+                    chosen_class_item = item
             continue
+
+        # Faction filtering (remove incompatible items)
         if faction_items == Faction.option_alliance and "Horde" in item_categories:
             continue
         if faction_items == Faction.option_horde and "Alliance" in item_categories:
             continue
-        if not faction_item_precollected:  # Precollect faction-specific item
+        # Precollect the player's chosen faction item
+        if not faction_item_precollected: 
             if (faction_items == Faction.option_alliance and item.name == "Alliance") or (
                 faction_items == Faction.option_horde and item.name == "Horde"
             ):
@@ -197,6 +208,10 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         # Keep the item if no removal condition is met
         items_to_keep.append(item)
 
+    # After processing everything, precollect the chosen Class item (if any and if random_class is enabled)
+    if random_class and chosen_class_item is not None:
+        multiworld.push_precollected(chosen_class_item)
+
     # Replace the item_pool with the filtered items
     item_pool = items_to_keep
 
@@ -204,14 +219,6 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     item_pool = world.adjust_filler_items(item_pool, [])
 
     return item_pool
-
-    # Some other useful hook options:
-
-    ## Place an item at a specific location
-    # location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == "Location Name")
-    # item_to_place = next(i for i in item_pool if i.name == "Item Name")
-    # location.place_locked_item(item_to_place)
-    # item_pool.remove(item_to_place)
 
 # The complete item pool prior to being set for generation is provided here, in case you want to make changes to it
 def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:

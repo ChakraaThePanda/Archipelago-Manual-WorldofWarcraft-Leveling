@@ -1,10 +1,4 @@
 {
-  "Randomize Starting Class": {
-    "yaml_option": [
-      "randomize_starting_class"
-    ],
-    "hidden": true
-  },
   "Dungeons": {
     "yaml_option": [
       "include_dungeons"

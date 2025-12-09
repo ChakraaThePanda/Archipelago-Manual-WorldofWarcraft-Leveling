@@ -53,6 +53,11 @@ class Faction(Choice):
     option_alliance = 0
     option_horde = 1
     default = "random"
+
+class RandomizeClass(Toggle):
+    """If set to 'true', you will be given a random class for you to play. You can see the received class in the Manual client."""
+    display_name = """Randomize Starting Class"""
+    default = False
     
 class LevelItems(Choice):
     """Progressive will add multiple Progressive Levels to the pool and replace the normal "Maximum Level X" items."""
@@ -85,6 +90,7 @@ def before_options_defined(options: dict[str, Type[Option[Any]]]) -> dict[str, T
     options["expansion"] = Expansion
     options["pre_or_post_cataclysm"] = PreOrPostCataclysm
     options["faction"] = Faction
+    options["randomize_class"] = RandomizeClass
     options["level_items"] = LevelItems
     options["easier_transitions"] = EasierTransitions
     return options
@@ -104,9 +110,6 @@ def after_options_defined(options: Type[PerGameCommonOptions]):
     Gold Hunt: Find a set amount of Gold in the item pool to win. Define the amount of Gold needed with the 'gold_hunt_amount' option."""    
     options.type_hints["goal"].default = 0
     options.type_hints["goal"].display_name = "Selected Goal"
-    options.type_hints["randomize_starting_class"].__doc__ = """If set to 'true', you will be given a random class for you to play. You can see the received class in the Manual client."""
-    options.type_hints["randomize_starting_class"].default = False
-    options.type_hints["randomize_starting_class"].display_name = "Randomize Starting Class"
     options.type_hints["include_dungeons"].__doc__ = """If set to 'true', this will add all the various leveling dungeons as Filler items. This has no effect on logic; only Maximum Level and Zone Items do."""
     options.type_hints["include_dungeons"].default = False
     options.type_hints["include_dungeons"].display_name = "Include Dungeons"
