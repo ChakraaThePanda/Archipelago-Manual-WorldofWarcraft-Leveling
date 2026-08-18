@@ -1,4 +1,10 @@
 # Archipelago-Manual-WorldofWarcraft-Leveling
+
+> [!NOTE]  
+> **This project is sunsetted and no longer maintained.**
+> 
+> It's been replaced by a dedicated (non-Manual) apworld: [Archipelago-WorldofWarcraft-Leveling](https://github.com/ChakraaThePanda/Archipelago-WorldofWarcraft-Leveling)
+
 This AP World requires the use of the of World of Warcraft up to the Mists of Pandaria Expansion, as all the zones and content are defined as they were during those expansions.
 I'll let you figure out how to play on those expansion on your own ;)
 
